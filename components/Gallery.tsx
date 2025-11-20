@@ -43,20 +43,20 @@ const Gallery: React.FC = () => {
               key={idx} 
               className={`group relative overflow-hidden rounded-xl h-64 md:h-80 ${idx === 0 || idx === 3 ? 'md:col-span-2' : ''}`}
             >
-              <img 
-                src={img.src} 
-                alt={img.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+              <img
+                src={img.src}
+                alt={img.title}
+                className="w-full h-full object-cover transition-transform duration-700 grayscale md:group-hover:grayscale-0 md:group-hover:scale-110"
               />
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-300" />
-              
-              {/* Border overlay */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-neon-green/50 transition-colors duration-300 m-4 rounded-lg" />
 
-              <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-neon-green font-sans text-xs font-bold uppercase tracking-widest mb-1 block opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 md:group-hover:bg-black/30 transition-colors duration-300" />
+
+              {/* Border overlay */}
+              <div className="absolute inset-0 border-2 border-transparent md:group-hover:border-neon-green/50 transition-colors duration-300 m-4 rounded-lg" />
+
+              <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300 md:translate-y-0">
+                <span className="text-neon-green font-sans text-xs font-bold uppercase tracking-widest mb-1 block opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-100">
                   {img.category}
                 </span>
                 <h3 className="font-display font-bold text-2xl text-white">{img.title}</h3>
