@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Gallery from './components/Gallery';
-import Video from './components/Video';
+import VideoShowcase from './components/VideoShowcase';
 import BookingSection from './components/BookingSection';
 import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         <Hero />
         <Features />
         <Gallery />
-        <Video />
+        <VideoShowcase />
         <BookingSection />
         <LocationSection />
       </main>
