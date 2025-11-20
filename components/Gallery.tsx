@@ -33,12 +33,20 @@ const Gallery: React.FC = () => {
         entries.forEach((entry) => {
           const index = parseInt(entry.target.getAttribute('data-index') || '0');
           if (entry.isIntersecting) {
+            // Card is entering viewport - add hover effects
             setVisibleCards((prev) => new Set(prev).add(index));
+          } else {
+            // Card is leaving viewport - remove hover effects
+            setVisibleCards((prev) => {
+              const newSet = new Set(prev);
+              newSet.delete(index);
+              return newSet;
+            });
           }
         });
       },
       {
-        threshold: 0.3, // Trigger when 30% of the card is visible
+        threshold: [0, 0.3], // Trigger when 0% and 30% of the card is visible
         rootMargin: '-50px 0px -50px 0px' // Start animation slightly before fully visible
       }
     );
